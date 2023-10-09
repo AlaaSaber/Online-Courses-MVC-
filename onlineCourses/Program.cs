@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Identity;
+using onlineCourses.Models;
+
 namespace onlineCourses
 {
     public class Program
@@ -8,6 +11,16 @@ namespace onlineCourses
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>(o =>
+            {
+                o.Password.RequiredLength = 10;
+                o.Password.RequireUppercase = true;
+                o.Password.RequireLowercase = true;
+                o.Password.RequireDigit = true;
+
+            })
+              .AddEntityFrameworkStores<DBContext>();
 
             var app = builder.Build();
 
