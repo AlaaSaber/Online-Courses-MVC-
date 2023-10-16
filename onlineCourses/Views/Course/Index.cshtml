@@ -1,0 +1,22 @@
+﻿@model List<Course>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="vw-100 bg-light text-center p-5">Courses</h1>
+
+<table class="table table-bordered text-center">
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>Degree</th>
+	</tr>
+@foreach (var crs in Model)
+{
+	<tr>
+		<td>@crs.Id</td>
+		<td>@crs.Name</td>
+		<td>@crs.Grade</td>
+	</tr>
+}
+</table>
+

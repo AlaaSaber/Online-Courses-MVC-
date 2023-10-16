@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using onlineCourses.Models;
+using onlineCourses.Repository.Courses;
 
 namespace onlineCourses
 {
@@ -12,6 +14,9 @@ namespace onlineCourses
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<DBContext>(options=>options.UseSqlServer(builder.Configuration.
+                GetConnectionString("DbConnectionString")));
+
             builder.Services.AddIdentity<AppUser, IdentityRole>(o =>
             {
                 o.Password.RequiredLength = 10;
@@ -21,6 +26,8 @@ namespace onlineCourses
 
             })
               .AddEntityFrameworkStores<DBContext>();
+
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
             var app = builder.Build();
 

@@ -24,10 +24,10 @@ namespace onlineCourses.Models
         public virtual DbSet<Lecture> Lectures  { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=MOSTAFAMAGED\\SQLEXPRESS;Initial Catalog=MVCPROJECT;Integrated Security=True;Encrypt=False");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=MOSTAFAMAGED\\SQLEXPRESS;Initial Catalog=MVCPROJECT;Integrated Security=True;Encrypt=False");
+        //}
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
