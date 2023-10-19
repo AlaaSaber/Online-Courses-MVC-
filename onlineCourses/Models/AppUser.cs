@@ -4,6 +4,6 @@ namespace onlineCourses.Models
 {
     public class AppUser : IdentityUser
     {
-        public string address { get; set; }
+        public string Address { get; set; }
     }
 }
