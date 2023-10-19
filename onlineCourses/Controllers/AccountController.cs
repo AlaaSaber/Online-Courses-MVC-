@@ -51,7 +51,7 @@ namespace onlineCourses.Controllers
                     Directory.CreateDirectory(path);
                 }
 
-                string fileName = Path.GetFileName(postedImage.FileName) + "_" + registerVM.Name;
+                string fileName = Path.GetFileName(registerVM.Name + postedImage.FileName) ;
                 using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
                 {
                     postedImage.CopyTo(stream);
