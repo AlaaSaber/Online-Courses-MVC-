@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using onlineCourses.Data;
 using onlineCourses.Models;
 using onlineCourses.Repository.Courses;
 
@@ -62,7 +63,10 @@ namespace onlineCourses
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            AppDbInitializer.SeedRolesAsync(app).Wait();
+
             app.Run();
+
         }
     }
 }
