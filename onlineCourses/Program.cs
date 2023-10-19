@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using onlineCourses.Models;
@@ -17,6 +18,12 @@ namespace onlineCourses
             builder.Services.AddDbContext<DBContext>(options=>options.UseSqlServer(builder.Configuration.
                 GetConnectionString("DbConnectionString")));
 
+            builder.Services.AddSession();
+            builder.Services.AddAuthentication(options => {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+                  
+
             builder.Services.AddIdentity<AppUser, IdentityRole>(o =>
             {
                 o.Password.RequiredLength = 10;
@@ -26,6 +33,8 @@ namespace onlineCourses
 
             })
               .AddEntityFrameworkStores<DBContext>();
+
+            builder.Services.AddIdentityCore<Student>().AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
@@ -44,6 +53,9 @@ namespace onlineCourses
 
             app.UseRouting();
 
+            app.UseSession();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
