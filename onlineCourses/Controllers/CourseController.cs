@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using onlineCourses.Data.ViewModels.CourseViewModels;
 using onlineCourses.Models;
-using onlineCourses.ModelViews;
 using onlineCourses.Repository.Categories;
 using onlineCourses.Repository.Courses;
 
 namespace onlineCourses.Controllers
 {
-	public class CourseController : Controller
+    public class CourseController : Controller
 	{
 		private ICourseRepository courseRepository;
 		private ICategoryRepository categoryRepository;
@@ -130,7 +130,6 @@ namespace onlineCourses.Controllers
 			courseRepository.saveDB();
 			return RedirectToAction("index");
 		}
-
 
 	}
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FNRkgfBnuUdYgR44/2aLoUxm8+q+/UmVw7k7lFH7GTJf7W5FHqrEW4WYH8GgoVyVXEaA+Iz6UbFyX9rGKrtxSA==",
+  "dgSpecHash": "vs00uNzPmkBoGUlewuA6NzrsfVWVShSnnbYOwkSray2XzRVEhy+kjIYZ8urW1jLa80dsfAd1G6pUzoMLLZ5Lgg==",
   "success": true,
-  "projectFilePath": "E:\\ITI\\Projects\\New folder\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
+  "projectFilePath": "E:\\ITI\\Projects\\MVC New\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\T480\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\T480\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
