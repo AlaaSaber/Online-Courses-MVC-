@@ -23,7 +23,9 @@ namespace onlineCourses.Controllers
 		}
 		#endregion
 
+
 		#region New
+
 		public IActionResult New() { 
 		
 		return View("New");
@@ -43,14 +45,14 @@ namespace onlineCourses.Controllers
 		#endregion
 
 		#region Edit
-		public ActionResult Edit(int id) { 
+		public IActionResult Edit(int id) { 
 		
 		Lecture model = lectureRepository.getLecByID(id);
 			return View("Edit",model);
 		
 		}
 
-		public ActionResult SaveEdit(Lecture lec) {
+		public IActionResult SaveEdit(Lecture lec) {
 		
 		if (ModelState.IsValid)
 			{
@@ -65,7 +67,7 @@ namespace onlineCourses.Controllers
         #endregion
 
         #region Delete
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
 		{
 			Lecture model = lectureRepository.getLecByID(id);
 
