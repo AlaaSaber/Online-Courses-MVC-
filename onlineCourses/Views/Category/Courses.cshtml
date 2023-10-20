@@ -1,0 +1,35 @@
+﻿@model IEnumerable<onlineCourses.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+@section css{
+        <link rel="stylesheet" href="~/css/Category.css" asp-append-version="true" />
+}
+
+
+<h1>Courses</h1>
+
+<div class="container">
+    <div class="row">
+        @if (Model.Any())
+        {
+            @foreach (Course course in Model)
+            {
+                <div class="category col-4 me-3 mb-3 text-center">
+                    <h2>@course.Title</h2>
+                    <h3>@course.Name</h3>
+                    <h4>Price: @course.price</h4>
+                    <h4>Duration: @course.Duration</h4>
+                    <p>Description: @course.Description</p>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-6 offset-3 me-3 mb-3 text-center">
+                <h2>No Courses In This Category</h2>
+            </div>
+        }
+    </div>
+</div>

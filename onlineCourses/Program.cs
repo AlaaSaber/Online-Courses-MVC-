@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using onlineCategorys.Repository.Categories;
 using onlineCourses.Data;
 using onlineCourses.Models;
+using onlineCourses.Repository;
 using onlineCourses.Repository.Categories;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
@@ -41,6 +42,7 @@ namespace onlineCourses
             builder.Services.AddIdentityCore<Student>().AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+
 			builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 			builder.Services.AddScoped<IExamRepository, ExamRepository>();
 
