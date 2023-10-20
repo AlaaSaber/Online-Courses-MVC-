@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using onlineCategorys.Repository.Categories;
 using onlineCourses.Data;
 using onlineCourses.Models;
+using onlineCourses.Repository.Categories;
 using onlineCourses.Repository.Courses;
 
 namespace onlineCourses
@@ -38,8 +40,10 @@ namespace onlineCourses
             builder.Services.AddIdentityCore<Student>().AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+			builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
-            var app = builder.Build();
+
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
