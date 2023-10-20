@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Data.ViewModels.CourseViewModels;
 using onlineCourses.Models;
-using onlineCourses.Repository.Categories;
+using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
 
 namespace onlineCourses.Controllers
@@ -18,7 +18,7 @@ namespace onlineCourses.Controllers
 		}
 		public IActionResult Index()
 		{
-			ViewBag.cats = categoryRepository.getAllCategorys();
+			ViewBag.cats = categoryRepository.GetAll();
 			return View(courseRepository.getAllCourses());
 		}
 		public IActionResult getCoursesByCategory(int CatID)
@@ -54,7 +54,7 @@ namespace onlineCourses.Controllers
 		[HttpGet]
 		public IActionResult NewCourse()
 		{
-			ViewBag.cats = categoryRepository.getAllCategorys();
+			ViewBag.cats = categoryRepository.GetAll();
 			return View();
 		}
 		[HttpPost]
@@ -95,7 +95,7 @@ namespace onlineCourses.Controllers
 
 			ViewBag.id = id;
 
-			ViewBag.cats = categoryRepository.getAllCategorys();
+			ViewBag.cats = categoryRepository.GetAll();
 
 			return View(addCourseModel);
 		}
@@ -118,7 +118,7 @@ namespace onlineCourses.Controllers
 				courseRepository.saveDB();
 				return RedirectToAction("index");
 			}
-			ViewBag.cats = categoryRepository.getAllCategorys();
+			ViewBag.cats = categoryRepository.GetAll();
 			return View(addCourseModel);
 		}
 

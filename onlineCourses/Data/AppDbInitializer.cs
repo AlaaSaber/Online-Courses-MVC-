@@ -14,6 +14,9 @@ namespace onlineCourses.Data
 
                 if (!await roleManager.RoleExistsAsync(UserRoles.Student))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Student));
+
+                if (!await roleManager.RoleExistsAsync(UserRoles.Instructor))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Instructor));
             }
         }
     }

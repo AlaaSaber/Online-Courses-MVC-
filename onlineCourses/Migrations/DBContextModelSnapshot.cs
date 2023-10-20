@@ -160,8 +160,19 @@ namespace onlineCourses.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -169,6 +180,16 @@ namespace onlineCourses.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("varchar(1)");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
@@ -204,10 +225,6 @@ namespace onlineCourses.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -219,6 +236,10 @@ namespace onlineCourses.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("AppUser");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Category", b =>
@@ -231,11 +252,12 @@ namespace onlineCourses.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Course", b =>
@@ -273,11 +295,11 @@ namespace onlineCourses.Migrations
                     b.Property<int?>("cat_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ins_id")
-                        .HasColumnType("int");
+                    b.Property<string>("ins_id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("Money");
 
                     b.HasKey("Id");
 
@@ -285,7 +307,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Exam", b =>
@@ -312,45 +334,7 @@ namespace onlineCourses.Migrations
                         .IsUnique()
                         .HasFilter("[crs_id] IS NOT NULL");
 
-                    b.ToTable("Exams", (string)null);
-                });
-
-            modelBuilder.Entity("onlineCourses.Models.Instructor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
-
-                    b.Property<byte[]>("image")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<int>("phone")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Instructors", (string)null);
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Lecture", b =>
@@ -372,14 +356,15 @@ namespace onlineCourses.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ins_id")
-                        .HasColumnType("int");
+                    b.Property<string>("ins_id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Lectures", (string)null);
+                    b.ToTable("Lectures");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Question", b =>
@@ -414,7 +399,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("qust_type");
 
-                    b.ToTable("Questions", (string)null);
+                    b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.QuestionType", b =>
@@ -431,63 +416,39 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("QuestionTypes", (string)null);
-                });
-
-            modelBuilder.Entity("onlineCourses.Models.Student", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
-
-                    b.Property<byte[]>("Image")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("QuestionTypes");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Student_Course", b =>
                 {
-                    b.Property<int?>("Stud_Id")
-                        .HasColumnType("int");
+                    b.Property<string>("Stud_Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("Course_Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("degree")
+                    b.Property<int>("Degree")
                         .HasColumnType("int");
 
                     b.HasKey("Stud_Id", "Course_Id");
 
                     b.HasIndex("Course_Id");
 
-                    b.ToTable("Student_Courses", (string)null);
+                    b.ToTable("Student_Courses");
+                });
+
+            modelBuilder.Entity("onlineCourses.Models.Instructor", b =>
+                {
+                    b.HasBaseType("onlineCourses.Models.AppUser");
+
+                    b.HasDiscriminator().HasValue("Instructor");
+                });
+
+            modelBuilder.Entity("onlineCourses.Models.Student", b =>
+                {
+                    b.HasBaseType("onlineCourses.Models.AppUser");
+
+                    b.HasDiscriminator().HasValue("Student");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -627,16 +588,16 @@ namespace onlineCourses.Migrations
                     b.Navigation("Questions");
                 });
 
+            modelBuilder.Entity("onlineCourses.Models.QuestionType", b =>
+                {
+                    b.Navigation("Questions");
+                });
+
             modelBuilder.Entity("onlineCourses.Models.Instructor", b =>
                 {
                     b.Navigation("Courses");
 
                     b.Navigation("Lectures");
-                });
-
-            modelBuilder.Entity("onlineCourses.Models.QuestionType", b =>
-                {
-                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Student", b =>

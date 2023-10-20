@@ -9,7 +9,8 @@ namespace onlineCourses.Data.ViewModels
     {
         [Required(AllowEmptyStrings = false)]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Name length must be from 3 to 50 characters")]
-        public string Name { get; set; }
+        [Unique]
+        public string UserName { get; set; }
         [Required]
         [Range(8, 25, ErrorMessage = "Age must be from 8 to 25")]
         public int Age { get; set; }
