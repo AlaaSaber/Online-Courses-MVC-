@@ -10,7 +10,7 @@ namespace onlineCourses.Models
         public float Duration { get; set; }
         
         [ForeignKey("Instructor")]
-        public int ins_id{ get; set; }
+        public string ins_id{ get; set; }
         public Instructor Instructor { get; set; }
 
     }

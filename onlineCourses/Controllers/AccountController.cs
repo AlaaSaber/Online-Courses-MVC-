@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using onlineCourses.Data.Static;
 using onlineCourses.Data.ViewModels;
 using onlineCourses.Models;
 
@@ -51,7 +52,7 @@ namespace onlineCourses.Controllers
                     Directory.CreateDirectory(path);
                 }
 
-                string fileName = Path.GetFileName(registerVM.Name + postedImage.FileName) ;
+                string fileName = Path.GetFileName(registerVM.UserName + postedImage.FileName) ;
                 using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
                 {
                     postedImage.CopyTo(stream);
@@ -67,8 +68,7 @@ namespace onlineCourses.Controllers
             {
                 user = new Student()
                 {
-                    Name = registerVM.Name,
-                    UserName = registerVM.Name,
+                    UserName = registerVM.UserName,
                     Age = registerVM.Age,
                     Address = registerVM.Address,
                     Email = registerVM.Email,
@@ -84,6 +84,12 @@ namespace onlineCourses.Controllers
             if(result.Succeeded)
             {
                 await signInManager.SignInAsync(user, false);
+
+                if (role.Contains("Student"))
+                {
+                    await userManager.AddToRoleAsync(user, UserRoles.Student);
+                }
+
                 return RedirectToAction("Index", "Home");
             }
             else

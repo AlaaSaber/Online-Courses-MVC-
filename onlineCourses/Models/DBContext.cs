@@ -6,13 +6,13 @@ namespace onlineCourses.Models
 {
     public class DBContext : IdentityDbContext<AppUser>
     {
-        public DBContext() : base()
-        { }
         public DBContext(DbContextOptions<DBContext> options)
            : base(options)
         {
 
         }
+        public DBContext() : base()
+        { }
 
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Instructor> Instructors  { get; set; }
@@ -24,10 +24,10 @@ namespace onlineCourses.Models
         public virtual DbSet<Lecture> Lectures  { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Data Source=MOSTAFAMAGED\\SQLEXPRESS;Initial Catalog=MVCPROJECT;Integrated Security=True;Encrypt=False");
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=ITI_MVC_Project;Trusted_Connection=True;TrustServerCertificate=True;");
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

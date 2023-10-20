@@ -9,8 +9,9 @@ namespace onlineCourses.Models.Attributes
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             DBContext context = new DBContext();
-
-            var entity = context.Model.FindEntityType(validationContext.ObjectType).GetTableName();
+            
+            AppUser user = validationContext?.ObjectInstance as AppUser;
+            var entity = context.Model.FindEntityType(user.GetType()).GetTableName();
             var property = validationContext.MemberName;
             var propertyValue = value.ToString();
 
