@@ -1,0 +1,33 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "courseDetails";
+	ViewBag.InsName =  Model.Instructor?.Name?? "No Instructor Assigned yet";
+}
+
+<h1 class="text-center p-3 bg-light">courseDetails</h1>
+
+<table class="table table-bordered text-center">
+	<tr>
+		<th>ID</th>
+		<th>name</th>
+		<th>Instructor</th>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Degree</th>
+		<th>Duration</th>
+		<th>Created Date</th>
+	</tr>
+	<tr>
+		<td>@Model.Id</td>
+		<td>@Model.Name</td>
+		<td>@ViewBag.InsName</td>
+		<td>@Model.Title</td>
+		<td>@Model.Description</td>
+		<td>@Model.price</td>
+		<td>@Model.Grade</td>
+		<td>@Model.Duration</td>
+		<td>@Model.Created</td>
+	</tr>
+</table>
+<a class="btn btn-outline-primary text-center d-block" asp-action="index"> Go Back <i class="bi bi-arrow-return-left"></i></a>

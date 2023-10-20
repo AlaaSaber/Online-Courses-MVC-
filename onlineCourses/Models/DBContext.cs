@@ -36,6 +36,7 @@ namespace onlineCourses.Models
                 .HasKey(l => new { l.UserId, l.LoginProvider, l.ProviderKey });
 
             builder.Entity<Student_Course>().HasKey("Stud_Id", "Course_Id");
-        }
+
+		}
     }
 }

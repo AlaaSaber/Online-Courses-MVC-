@@ -6,7 +6,8 @@ namespace onlineCourses.Repository.Courses
     {
         List<Course> getAllCourses ();
         Course getCourseByID (int ID);
-        void UpdateCourse (Course course);
+        List<Course> getCourseByCategotyID(int CatID);
+		void UpdateCourse (Course course);
         void DeleteCourse (Course course);
         void AddCourse (Course course);
         int saveDB ();

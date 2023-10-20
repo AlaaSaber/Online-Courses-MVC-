@@ -1,4 +1,6 @@
 ﻿using onlineCourses.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace onlineCourses.Repository.Courses
 {
@@ -22,15 +24,21 @@ namespace onlineCourses.Repository.Courses
 
         public List<Course> getAllCourses()
         {
-            return dBContext.Courses.ToList();
+            return dBContext.Courses.Where(c=>!c.IsDeleted).Include(i=>i.Instructor).ToList();
         }
 
         public Course getCourseByID(int ID)
         {
-            return dBContext.Courses.Where(c => c.Id == ID).FirstOrDefault();
+            return dBContext.Courses.Where(c => !c.IsDeleted).Include(i=>i.Instructor).
+                Where(c => c.Id == ID).FirstOrDefault();
         }
+		public List<Course> getCourseByCategotyID(int CatID)
+		{
+			return dBContext.Courses.Where(c => !c.IsDeleted).Include(i => i.Instructor).
+				Where(c => c.cat_id == CatID).ToList();
+		}
 
-        public int saveDB()
+		public int saveDB()
         {
             return dBContext.SaveChanges();
         }
