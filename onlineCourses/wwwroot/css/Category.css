@@ -1,0 +1,16 @@
+﻿.category{
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 1s;
+    max-width: 30%;
+}
+
+.category:hover{
+    background-color: darkorange;
+}
+
+.actions i{
+    color: darkblue;
+    font-size: 20px;
+}
