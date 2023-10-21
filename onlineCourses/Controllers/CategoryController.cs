@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using onlineCourses.Data.Static;
 using onlineCourses.Models;
 using onlineCourses.Repository;
 
@@ -26,6 +28,7 @@ namespace onlineCourses.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Student)]
         public IActionResult Create()
         {
             return View(new Category());
