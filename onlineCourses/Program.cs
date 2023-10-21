@@ -6,6 +6,7 @@ using onlineCourses.Models;
 using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
+using onlineCourses.Repository.Lectures;
 
 namespace onlineCourses
 {
@@ -38,9 +39,12 @@ namespace onlineCourses
               .AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddIdentityCore<Student>().AddEntityFrameworkStores<DBContext>();
+
             builder.Services.AddIdentityCore<Instructor>().AddEntityFrameworkStores<DBContext>();
 
-            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+			      builder.Services.AddScoped<ILectureRepository, LectureRepository>();
+
+			builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             builder.Services.AddScoped<IExamRepository, ExamRepository>();

@@ -1,0 +1,36 @@
+﻿@model List<Lecture>
+@{
+	ViewData["Title"] = "Index";
+}
+<h1 class="vw-100 bg-light text-center p-5">Lectures</h1>
+
+<a asp-action="New" asp-controller="Lecture" class="btn btn-success">New</a>
+
+<table class="table table-bordered text-center">
+	<tr>
+		<th>id</th>
+		<th>name</th>
+		<th>Description</th>
+		<th>Duration</th>
+		<th>Instructor</th>
+
+
+	</tr>
+
+@*	@foreach (Lecture lec in Model)
+	{
+
+		<tr>
+			<td>@lec.Id</td>
+			<td>@lec.Name</td>
+			<td>@lec.Description</td>
+			<td>@lec.Duration</td>
+			<td>@lec.Instructor.UserName</td>
+	<td><a asp-action="Edit" asp-controller="Lecture" class="btn btn-Primary">Edit</a></td>
+	<td><a asp-action="Delete" asp-controller="Lecture" class="btn btn-Danger">Delete</a></td>
+
+
+	</tr>
+
+	}*@
+</table>
