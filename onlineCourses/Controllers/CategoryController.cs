@@ -15,6 +15,7 @@ namespace onlineCourses.Controllers
         }
         public IActionResult Index()
         {
+
             var categories = _categoryRepository.GetAll();
 
             return View(categories);

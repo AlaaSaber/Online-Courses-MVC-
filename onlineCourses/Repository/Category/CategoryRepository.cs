@@ -13,6 +13,7 @@ namespace onlineCourses.Repository
 
         public List<Category> GetAll()
         {
+
             return _dbContext.Categories.AsNoTracking().ToList();
         }
 
