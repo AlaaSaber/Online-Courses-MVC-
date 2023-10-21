@@ -38,6 +38,7 @@ namespace onlineCourses
               .AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddIdentityCore<Student>().AddEntityFrameworkStores<DBContext>();
+            builder.Services.AddIdentityCore<Instructor>().AddEntityFrameworkStores<DBContext>();
 
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
