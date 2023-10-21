@@ -13,7 +13,8 @@ namespace onlineCourses.Repository
 
         public List<Category> GetAll()
         {
-            return  _dbContext.Categories.AsNoTracking().ToList();
+
+            return _dbContext.Categories.AsNoTracking().ToList();
         }
 
         public async Task<Category> GetById(int id)
