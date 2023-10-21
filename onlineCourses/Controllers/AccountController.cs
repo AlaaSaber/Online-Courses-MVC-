@@ -64,7 +64,7 @@ namespace onlineCourses.Controllers
 
             AppUser user = null;
 
-            if (role == ("Student"))
+            if (role.Contains("Student"))
             {
                 user = new Student()
                 {
@@ -78,21 +78,6 @@ namespace onlineCourses.Controllers
                     PasswordHash = registerVM.Password
                 };
             }
-            else if(role == "Instructor")
-            {
-                user = new Instructor()
-                {
-                    UserName = registerVM.UserName,
-                    Age = registerVM.Age,
-                    Address = registerVM.Address,
-                    Email = registerVM.Email,
-                    PhoneNumber = registerVM.PhoneNumber,
-                    Gender = registerVM.Gender,
-                    ImageURL = registerVM.ImageURL,
-                    PasswordHash = registerVM.Password
-                };
-            }
-
 
             var result = await userManager.CreateAsync(user, registerVM.Password);
 
@@ -102,13 +87,8 @@ namespace onlineCourses.Controllers
                 {
                     await userManager.AddToRoleAsync(user, UserRoles.Student);
                 }
-                else if (role.Contains("Instructor"))
-                {
-                    await userManager.AddToRoleAsync(user, UserRoles.Instructor);
-                }
-                await signInManager.SignInAsync(user, false);
 
-                
+                await signInManager.SignInAsync(user, false);
 
                 return RedirectToAction("Index", "Home");
             }
