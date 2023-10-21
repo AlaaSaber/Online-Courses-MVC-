@@ -10,8 +10,7 @@ namespace onlineCourses.Models.Attributes
         {
             DBContext context = new DBContext();
             
-            AppUser user = validationContext?.ObjectInstance as AppUser;
-            var entity = context.Model.FindEntityType(user.GetType()).GetTableName();
+            var entity = context.Model.FindEntityType(validationContext.ObjectType).GetTableName();
             var property = validationContext.MemberName;
             var propertyValue = value.ToString();
 
