@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<onlineCourses.Models.Category>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<Instructor> userManager
 
 @{
     ViewData["Title"] = "Categories";
@@ -20,16 +22,19 @@
         {
             <div class="category col-4 me-3 mb-3 text-center">
                 <h3 id="categoryName">@category.Name</h3>
+                @if(User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
+                {
+                    <div class="actions d-flex justify-content-evenly">
+                        <a asp-action="Edit" asp-route-Id="@category.Id">
+                            <i class="bi bi-pencil-square btn btn-outline-warning" asp-action="Edit"></i>
+                        </a>
 
-                <div class="actions d-flex justify-content-evenly">
-                    <a asp-action="Edit" asp-route-Id="@category.Id">
-                        <i class="bi bi-pencil-square btn btn-outline-warning" asp-action="Edit"></i>
-                    </a>
-
-                    <a asp-action="Delete" asp-route-Id="@category.Id">
-                        <i class="bi bi-trash3 bg-danger btn btn-outline-danger" asp-action="Delete"></i>
-                    </a>
-                </div>
+                        <a asp-action="Delete" asp-route-Id="@category.Id">
+                            <i class="bi bi-trash3 bg-danger btn btn-outline-danger" asp-action="Delete"></i>
+                        </a>
+                    </div>
+                }
+                
             </div>
         }
     </div>
