@@ -11,9 +11,9 @@ namespace onlineCourses.Repository
             _dbContext = dbContext;
         }
 
-        public async Task<List<Category>> GetAll()
+        public List<Category> GetAll()
         {
-            return await _dbContext.Categories.AsNoTracking().ToListAsync();
+            return  _dbContext.Categories.AsNoTracking().ToList();
         }
 
         public async Task<Category> GetById(int id)

@@ -6,7 +6,7 @@ namespace onlineCourses.Models
 {
     public class Student : AppUser
     {
-        public virtual ICollection<Student_Course>? Student_Course { get; set; }
+        public virtual ICollection<Student_Course>?Student_Course { get; set; }
 
     }
 }
