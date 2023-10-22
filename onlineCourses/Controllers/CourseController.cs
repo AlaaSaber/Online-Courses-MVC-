@@ -3,6 +3,7 @@ using onlineCourses.Data.ViewModels.CourseViewModels;
 using onlineCourses.Models;
 using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
+using onlineCourses.Repository.InstructorRepo;
 
 namespace onlineCourses.Controllers
 {
@@ -10,17 +11,20 @@ namespace onlineCourses.Controllers
 	{
 		private ICourseRepository courseRepository;
 		private ICategoryRepository categoryRepository;
+		private IInstructorRepository instructorRepository;
 
-		public CourseController(ICourseRepository courseRepository, ICategoryRepository categoryRepository)
+		public CourseController(IInstructorRepository instructorRepository, ICourseRepository courseRepository, ICategoryRepository categoryRepository)
 		{
 			this.courseRepository = courseRepository;
 			this.categoryRepository = categoryRepository;
+			this.instructorRepository = instructorRepository;
 		}
 		public IActionResult Index()
 		{
 			ViewBag.cats = categoryRepository.GetAll();
 			return View(courseRepository.getAllCourses());
-		}
+			
+		}	
 		public IActionResult getCoursesByCategory(int CatID)
 		{
 			if (CatID == 0)
@@ -49,7 +53,9 @@ namespace onlineCourses.Controllers
 		}
 		public IActionResult CourseDetails(int id)
 		{
-			return View(courseRepository.getCourseByID(id));
+			Course course = courseRepository.getCourseByID(id);
+			ViewData["Count"]=instructorRepository.countStudentEnrolled(id);
+            return View(course);
 		}
 		[HttpGet]
 		public IActionResult NewCourse()
@@ -73,9 +79,10 @@ namespace onlineCourses.Controllers
 				course.Created = DateTime.Now;
 				course.IsDeleted = false;
 				course.cat_id = addCourseModel.categoryID;
+				course.ins_id = InstructorController.Instructor_ID;
 				courseRepository.AddCourse(course);
 				courseRepository.saveDB();
-				return RedirectToAction("index");
+				return RedirectToAction("Home","Instructor");
 			}
 			return View(addCourseModel);
 		}

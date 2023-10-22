@@ -257,7 +257,7 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Course", b =>
@@ -307,7 +307,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Exam", b =>
@@ -334,7 +334,7 @@ namespace onlineCourses.Migrations
                         .IsUnique()
                         .HasFilter("[crs_id] IS NOT NULL");
 
-                    b.ToTable("Exams");
+                    b.ToTable("Exams", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Lecture", b =>
@@ -364,7 +364,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Lectures");
+                    b.ToTable("Lectures", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Question", b =>
@@ -399,7 +399,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("qust_type");
 
-                    b.ToTable("Questions");
+                    b.ToTable("Questions", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.QuestionType", b =>
@@ -416,7 +416,7 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("QuestionTypes");
+                    b.ToTable("QuestionTypes", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Student_Course", b =>
@@ -434,7 +434,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("Course_Id");
 
-                    b.ToTable("Student_Courses");
+                    b.ToTable("Student_Courses", (string)null);
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Instructor", b =>

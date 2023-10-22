@@ -11,9 +11,10 @@ namespace onlineCourses.Repository
             _dbContext = dbContext;
         }
 
-        public async Task<List<Category>> GetAll()
+        public List<Category> GetAll()
         {
-            return await _dbContext.Categories.AsNoTracking().ToListAsync();
+
+            return _dbContext.Categories.AsNoTracking().ToList();
         }
 
         public async Task<Category> GetById(int id)
@@ -30,9 +31,8 @@ namespace onlineCourses.Repository
             {
                 return null;
             }
-
             var courses = await _dbContext.Courses
-                .Where(c => c.cat_id == category.Id)
+                .Where(c => c.IsDeleted==false & c.cat_id == category.Id)
                 .ToListAsync();
 
             return courses;

@@ -21,24 +21,28 @@ namespace onlineCourses.Repository.Courses
         {
             dBContext.Remove(course);
         }
-
         public List<Course> getAllCourses()
         {
-            return dBContext.Courses.Where(c=>!c.IsDeleted).Include(i=>i.Instructor).ToList();
+            return  dBContext.Courses.Where(c=>!c.IsDeleted).Include(i=>i.Instructor).ToList();
         }
 
         public Course getCourseByID(int ID)
         {
-            return dBContext.Courses.Where(c => !c.IsDeleted).Include(i=>i.Instructor).
-                Where(c => c.Id == ID).FirstOrDefault();
+
+            return dBContext.Courses.Where(c => !c.IsDeleted).Include(i => i.Instructor).FirstOrDefault(c => c.Id== ID);
+
         }
 		public List<Course> getCourseByCategotyID(int CatID)
 		{
 			return dBContext.Courses.Where(c => !c.IsDeleted).Include(i => i.Instructor).
 				Where(c => c.cat_id == CatID).ToList();
 		}
+        public List<Course> GetCoursesByInstructorId(string instructorID)
+        {
+            return dBContext.Courses.Where(c => !c.IsDeleted & c.ins_id == instructorID).ToList();
+        }
 
-		public int saveDB()
+        public int saveDB()
         {
             return dBContext.SaveChanges();
         }
@@ -47,5 +51,7 @@ namespace onlineCourses.Repository.Courses
         {
             dBContext.Update(course);
         }
+
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Data.Static;
 using onlineCourses.Data.ViewModels;
@@ -83,17 +84,20 @@ namespace onlineCourses.Controllers
 
             if(result.Succeeded)
             {
-                await signInManager.SignInAsync(user, false);
-
                 if (role.Contains("Student"))
                 {
                     await userManager.AddToRoleAsync(user, UserRoles.Student);
                 }
 
+                await signInManager.SignInAsync(user, false);
+                if(User.IsInRole("Instructor"))
+                return RedirectToAction("Home", "Instructor");
                 return RedirectToAction("Index", "Home");
             }
             else
             {
+
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
@@ -105,6 +109,10 @@ namespace onlineCourses.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View(new LoginVM());
         }
 
@@ -131,8 +139,7 @@ namespace onlineCourses.Controllers
                 }
                 await signInManager.SignInAsync(user, loginVM.RememberMe);
             }
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("index", "Home");
         }
 
         public async Task<IActionResult> Logout()

@@ -58,7 +58,15 @@
 </div>
 
 <div>
+    @if (User.IsInRole("Insructor"))
+    {
+        <a asp-action="home" asp-controller="Instructor">Back to List</a>
+
+    }else
+    {
     <a asp-action="Index">Back to List</a>
+        
+    }
 </div>
 
 @section Scripts {

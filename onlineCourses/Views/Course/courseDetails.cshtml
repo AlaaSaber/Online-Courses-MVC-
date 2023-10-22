@@ -1,7 +1,7 @@
-﻿@model Course
+﻿@model onlineCourses.Models.Course;
 @{
-    ViewData["Title"] = "courseDetails";
-	ViewBag.InsName =  Model.Instructor?.UserName?? "No Instructor Assigned yet";
+	ViewData["Title"] = "courseDetails";
+	string InsName;
 }
 
 <h1 class="text-center p-3 bg-light">courseDetails</h1>
@@ -17,17 +17,34 @@
 		<th>Degree</th>
 		<th>Duration</th>
 		<th>Created Date</th>
+		@if(User.IsInRole("Instructor"))
+		{
+		<th>Students Enrolled</th>
+		<th>Actions</th>
+		}
 	</tr>
 	<tr>
 		<td>@Model.Id</td>
 		<td>@Model.Name</td>
-		<td>@ViewBag.InsName</td>
+		<td>@Model.Instructor.UserName</td>
 		<td>@Model.Title</td>
 		<td>@Model.Description</td>
 		<td>@Model.price</td>
 		<td>@Model.Grade</td>
 		<td>@Model.Duration</td>
 		<td>@Model.Created</td>
+		@if (User.IsInRole("Instructor"))
+		{
+		<td>@ViewBag.Count</td>
+		<td><a class="btn-danger" asp-action="EditCourse" asp-controller="Course" asp-route-id="@Model.Id">Edit</a></td>
+		}
 	</tr>
 </table>
+@if (User.IsInRole("Instructor"))
+{
+	<a class="btn btn-outline-primary text-center d-block" asp-action="home" asp-controller="Instructor"> Go Back <i class="bi bi-arrow-return-left"></i></a>
+
+}else
+{
 <a class="btn btn-outline-primary text-center d-block" asp-action="index"> Go Back <i class="bi bi-arrow-return-left"></i></a>
+}

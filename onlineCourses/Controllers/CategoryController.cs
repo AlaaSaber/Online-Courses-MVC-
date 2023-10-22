@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using onlineCourses.Data.Static;
 using onlineCourses.Models;
 using onlineCourses.Repository;
 
@@ -11,9 +13,10 @@ namespace onlineCourses.Controllers
         {
             _categoryRepository = categoryRepository;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var categories = await _categoryRepository.GetAll();
+
+            var categories = _categoryRepository.GetAll();
 
             return View(categories);
         }
@@ -21,11 +24,11 @@ namespace onlineCourses.Controllers
         public async Task<IActionResult> Courses(string categoryName)
         {
             var courses = await _categoryRepository.GetCategoryCourses(categoryName);
-
             return View(courses);
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Instructor)]
         public IActionResult Create()
         {
             return View(new Category());
@@ -54,6 +57,7 @@ namespace onlineCourses.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Instructor)]
         public async Task<IActionResult> Edit(int Id)
         {
             Category category = await _categoryRepository.GetById(Id);
@@ -88,6 +92,7 @@ namespace onlineCourses.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Instructor)]
         public async Task<IActionResult> Delete(int Id)
         {
             Category category = await _categoryRepository.GetById(Id);
