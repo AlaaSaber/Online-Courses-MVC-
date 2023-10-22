@@ -28,17 +28,19 @@ namespace onlineCourses.Repository.Courses
 
         public Course getCourseByID(int ID)
         {
-
             return  dBContext.Courses.Where(c => !c.IsDeleted).Include(i => i.Instructor).Where(c => c.Id== ID).FirstOrDefault();
-
         }
 		public List<Course> getCourseByCategotyID(int CatID)
 		{
 			return dBContext.Courses.Where(c => !c.IsDeleted).Include(i => i.Instructor).
 				Where(c => c.cat_id == CatID).ToList();
 		}
+        public List<Course> GetCoursesByInstructorId(string instructorID)
+        {
+            return dBContext.Courses.Where(c => !c.IsDeleted & c.ins_id == instructorID).ToList();
+        }
 
-		public int saveDB()
+        public int saveDB()
         {
             return dBContext.SaveChanges();
         }

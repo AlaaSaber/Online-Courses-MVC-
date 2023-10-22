@@ -1,7 +1,7 @@
 ﻿@model List<Course>
 @{
     ViewData["Title"] = "Index";
-    //SelectList listItems = new SelectList(ViewBag.cats, "Id", "Name");
+    SelectList listItems= new SelectList(ViewBag.cats, "Id", "Name");
 }
 <!-- Page info -->
 <div class="page-info-section set-bg" data-setbg="../SiteImages/page-bg/1.jpg">
