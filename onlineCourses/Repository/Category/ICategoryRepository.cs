@@ -4,7 +4,7 @@ namespace onlineCourses.Repository
 {
     public interface ICategoryRepository
     {
-        Task<List<Category>> GetAll();
+        List<Category> GetAll();
         Task<Category> GetById(int id);
         Task<List<Course>?> GetCategoryCourses(string categoryName);
         Task Create(Category category);

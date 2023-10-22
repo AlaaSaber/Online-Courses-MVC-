@@ -1,13 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace onlineCourses.Models
 {
     public class Lecture
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public float Duration { get; set; }
+
+		[MinLength(3, ErrorMessage = "Name must be more than 2 letter")]
+		[MaxLength(25)]
+		public string Name { get; set; }
+
+		[MaxLength(250)]
+
+		public string Description { get; set; }
+		[Range(minimum: 2, maximum: 6, ErrorMessage = "Range Must be More than 1 and less than or equal 6 ")]
+
+		public float Duration { get; set; }
         
         [ForeignKey("Instructor")]
         public string ins_id{ get; set; }

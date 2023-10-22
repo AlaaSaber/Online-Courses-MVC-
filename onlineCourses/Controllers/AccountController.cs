@@ -83,17 +83,19 @@ namespace onlineCourses.Controllers
 
             if(result.Succeeded)
             {
-                await signInManager.SignInAsync(user, false);
-
                 if (role.Contains("Student"))
                 {
                     await userManager.AddToRoleAsync(user, UserRoles.Student);
                 }
 
+                await signInManager.SignInAsync(user, false);
+
                 return RedirectToAction("Index", "Home");
             }
             else
             {
+
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);

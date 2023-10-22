@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "mnB0z4KWLTf0GKZVLDYLFh0IrBBD41VL+J/GuIff2vE=",
+=======
+  "Hash": "rGKvi7NkvBf3yAK+JG/VjwKEf4sbpeaN16WxJtfiQQM=",
+>>>>>>> c582903a96f99eead649cb92dea24ba6d1af1d63
   "Source": "onlineCourses",
   "BasePath": "_content/onlineCourses",
   "Mode": "Default",
@@ -102,7 +106,96 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+<<<<<<< HEAD
       "Identity": "E:\\ITI\\Projects\\MVC ERD NEW\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoudclawns.jpg",
+=======
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoud222IMG-20210728-WA0112.jpg",
+      "SourceId": "onlineCourses",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\",
+      "BasePath": "_content/onlineCourses",
+      "RelativePath": "Images/mahmoud222IMG-20210728-WA0112.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\mahmoud222IMG-20210728-WA0112.jpg"
+    },
+    {
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoud22clawns.jpg",
+      "SourceId": "onlineCourses",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\",
+      "BasePath": "_content/onlineCourses",
+      "RelativePath": "Images/mahmoud22clawns.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\mahmoud22clawns.jpg"
+    },
+    {
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoud232clawns.jpg",
+      "SourceId": "onlineCourses",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\",
+      "BasePath": "_content/onlineCourses",
+      "RelativePath": "Images/mahmoud232clawns.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\mahmoud232clawns.jpg"
+    },
+    {
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoud41242hamdy.jpg",
+      "SourceId": "onlineCourses",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\",
+      "BasePath": "_content/onlineCourses",
+      "RelativePath": "Images/mahmoud41242hamdy.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\mahmoud41242hamdy.jpg"
+    },
+    {
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoud4212clawns.jpg",
+      "SourceId": "onlineCourses",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\",
+      "BasePath": "_content/onlineCourses",
+      "RelativePath": "Images/mahmoud4212clawns.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\mahmoud4212clawns.jpg"
+    },
+    {
+      "Identity": "F:\\ITI\\MVC\\Project\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoudclawns.jpg",
+>>>>>>> c582903a96f99eead649cb92dea24ba6d1af1d63
       "SourceId": "onlineCourses",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\ITI\\Projects\\MVC ERD NEW\\MVC-Project\\onlineCourses\\wwwroot\\",

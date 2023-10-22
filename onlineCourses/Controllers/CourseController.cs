@@ -20,7 +20,7 @@ namespace onlineCourses.Controllers
 		{
 			ViewBag.cats = await categoryRepository.GetAll();
 			return View(courseRepository.getAllCourses());
-		}
+		}	
 		public IActionResult getCoursesByCategory(int CatID)
 		{
 			if (CatID == 0)
