@@ -43,12 +43,13 @@ namespace onlineCourses
 
             builder.Services.AddIdentityCore<Instructor>().AddEntityFrameworkStores<DBContext>();
 
-			      builder.Services.AddScoped<ILectureRepository, LectureRepository>();
+			builder.Services.AddScoped<ILectureRepository, LectureRepository>();
 
 			builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
-            builder.Services.AddScoped<IExamRepository, ExamRepository>();
+			builder.Services.AddScoped<IExamRepository, ExamRepository>();
             builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 
 
