@@ -44,23 +44,6 @@ namespace onlineCourses.Controllers
                 return View(registerVM);
             }
 
-            if (Request.Form.Files.Count > 0)
-            {
-                IFormFile postedImage = Request.Form.Files["UploadedImage"];
-                string path = Path.Combine(webHostEnvironment.WebRootPath, "Images");
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-
-                string fileName = Path.GetFileName(registerVM.UserName + postedImage.FileName) ;
-                using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-                {
-                    postedImage.CopyTo(stream);
-                    registerVM.ImageURL = fileName ?? null;
-                }
-            }
-
             var role = Request.Form["role"];
 
             AppUser user = null;
@@ -75,15 +58,35 @@ namespace onlineCourses.Controllers
                     Email = registerVM.Email,
                     PhoneNumber = registerVM.PhoneNumber,
                     Gender = registerVM.Gender,
-                    ImageURL = registerVM.ImageURL,
                     PasswordHash = registerVM.Password
                 };
             }
 
             var result = await userManager.CreateAsync(user, registerVM.Password);
 
-            if(result.Succeeded)
+            
+
+            if (result.Succeeded)
             {
+                if (Request.Form.Files.Count > 0)
+                {
+                    IFormFile postedImage = Request.Form.Files["UploadedImage"];
+                    string path = Path.Combine(webHostEnvironment.WebRootPath, "Images");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    string fileName = Path.GetFileName(registerVM.UserName + postedImage.FileName);
+                    using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+                    {
+                        postedImage.CopyTo(stream);
+                        registerVM.ImageURL = fileName ?? null;
+                    }
+                }
+
+                user.ImageURL = registerVM.ImageURL;
+
                 if (role.Contains("Student"))
                 {
                     await userManager.AddToRoleAsync(user, UserRoles.Student);

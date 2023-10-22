@@ -1,22 +1,23 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Models;
+using onlineCourses.Repository;
 
 namespace onlineCourses.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ICategoryRepository _categoryRepository;
+        public HomeController(ICategoryRepository categoryRepository)
         {
-            _logger = logger;
+            _categoryRepository = categoryRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-           
-            return View();
+            var categories = _categoryRepository.GetAll();
+            ViewBag.coursesCount = await _categoryRepository.CategoryCoursesCount();
+            return View(categories);
         }
 
         public IActionResult Privacy()
