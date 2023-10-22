@@ -13,7 +13,28 @@ namespace onlineCourses.Repository
 
         public List<Category> GetAll()
         {
-            return _dbContext.Categories.AsNoTracking().ToList();
+            return _dbContext.Categories
+                .Include(c => c.Courses)
+                .AsNoTracking().ToList();
+        }
+
+        public async Task<Dictionary<string,int>> CategoryCoursesCount()
+        {
+            Dictionary<string,int> coursesCount = new Dictionary<string,int>();
+            var categories = _dbContext.Categories.ToList();
+            var courseCount = 0;
+
+            foreach (var category in categories)
+            {
+                courseCount = _dbContext.Entry(category)
+                .Collection(c => c.Courses)
+                .Query()
+                .Count();
+
+                coursesCount.Add(category.Name, courseCount);
+            }
+            
+            return coursesCount;
         }
 
         public async Task<Category> GetById(int id)
@@ -23,8 +44,9 @@ namespace onlineCourses.Repository
             return category;
         }
 
-        public async Task<List<Course>?> GetCategoryCourses(string categoryName)
+        public async Task<Dictionary<Course,int>?> GetCategoryCourses(string categoryName)
         {
+            Dictionary<Course,int> coursesAndStudentsCount = new Dictionary<Course,int>();
             var category = await _dbContext.Categories.SingleOrDefaultAsync(c => c.Name.Equals(categoryName));
             if(category == null)
             {
@@ -33,9 +55,20 @@ namespace onlineCourses.Repository
 
             var courses = await _dbContext.Courses
                 .Where(c => c.cat_id == category.Id)
+                .Include(c => c.Instructor)
                 .ToListAsync();
+            int count = 0;
+            foreach(Course course in courses)
+            {
+                count = _dbContext.Entry(course)
+                .Collection(c => c.Student_Course)
+                .Query()
+                .Count();
 
-            return courses;
+                coursesAndStudentsCount.Add(course, count);
+            }
+
+            return coursesAndStudentsCount;
         }
         public async Task Create(Category category)
         {
