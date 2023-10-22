@@ -35,7 +35,8 @@
                         <a asp-action="CourseDetails" asp-route-id="@crs.Id" title="Course Details"><i class="bi bi-eye-fill"></i></a>
                         <a asp-action="EditCourse" asp-route-id="@crs.Id" title="Edit Course"><i class="bi bi-pencil-square text-warning"></i></a>
                         <a asp-action="DeleteCourse" asp-route-id="@crs.Id" title="Remove Course"><i class="bi bi-trash3-fill text-danger"></i></a>
-                        <a  asp-action="AddCourse" asp-controller="Student"  asp-route-courseid="@crs.Id" title="Enroll"><i class="bi bi-train-lightrail-front-fill text-secondary"></i></a>
+                        <a asp-action="AddCourse" asp-controller="Student" asp-route-courseid="@crs.Id" title="Enroll"><i class="bi bi-train-lightrail-front-fill text-secondary"></i></a>
+
                     </td>
                 </tr>
             }
