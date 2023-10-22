@@ -97,6 +97,8 @@ namespace onlineCourses.Controllers
             }
             else
             {
+
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);

@@ -13,6 +13,7 @@ namespace onlineCourses.Repository
 
         public List<Category> GetAll()
         {
+
             return _dbContext.Categories
                 .Include(c => c.Courses)
                 .AsNoTracking().ToList();
@@ -35,6 +36,7 @@ namespace onlineCourses.Repository
             }
             
             return coursesCount;
+
         }
 
         public async Task<Category> GetById(int id)

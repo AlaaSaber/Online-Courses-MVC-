@@ -28,8 +28,12 @@ namespace onlineCourses.Repository.Courses
 		{
 			return dBContext.Exams.Where(e => e.crs_id == ID).ToList();
 		}
+        public Exam getExamByID(int ID)
+        {
+            return dBContext.Exams.Where(e => e.Id == ID).FirstOrDefault();
+        }
 
-		public List<Exam> getExamByName(string Name)
+        public List<Exam> getExamByName(string Name)
 		{
 			return dBContext.Exams.Where(e => e.Name == Name).ToList();
 		}
