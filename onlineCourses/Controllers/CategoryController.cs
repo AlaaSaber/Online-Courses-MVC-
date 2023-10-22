@@ -13,9 +13,10 @@ namespace onlineCourses.Controllers
         {
             _categoryRepository = categoryRepository;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             var categories = _categoryRepository.GetAll();
+            ViewBag.coursesCount = await _categoryRepository.CategoryCoursesCount();
 
             return View(categories);
         }
