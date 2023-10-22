@@ -1,7 +1,11 @@
 ﻿@model Course
 @{
-    ViewData["Title"] = "courseDetails";
-	ViewBag.InsName =  Model.Instructor?.UserName?? "No Instructor Assigned yet";
+	ViewData["Title"] = "courseDetails";
+	string InsName;
+	if (Model.Instructor == null)
+		InsName = "No Instructor Assigned yet";
+	else
+		InsName = Model.Instructor.UserName;
 }
 
 <h1 class="text-center p-3 bg-light">courseDetails</h1>
@@ -21,7 +25,7 @@
 	<tr>
 		<td>@Model.Id</td>
 		<td>@Model.Name</td>
-		<td>@ViewBag.InsName</td>
+		<td>@InsName</td>
 		<td>@Model.Title</td>
 		<td>@Model.Description</td>
 		<td>@Model.price</td>
