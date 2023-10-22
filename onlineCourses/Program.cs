@@ -7,6 +7,7 @@ using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
 using onlineCourses.Repository.Lectures;
+using onlineCourses.Repository.Questions;
 
 namespace onlineCourses
 {
@@ -48,9 +49,10 @@ namespace onlineCourses
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             builder.Services.AddScoped<IExamRepository, ExamRepository>();
+            builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 
 
-			var app = builder.Build();
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

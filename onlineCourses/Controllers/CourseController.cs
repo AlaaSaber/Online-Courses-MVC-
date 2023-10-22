@@ -16,9 +16,9 @@ namespace onlineCourses.Controllers
 			this.courseRepository = courseRepository;
 			this.categoryRepository = categoryRepository;
 		}
-		public IActionResult Index()
+		public async Task<IActionResult> Index()
 		{
-			ViewBag.cats = categoryRepository.GetAll();
+			ViewBag.cats = await categoryRepository.GetAll();
 			return View(courseRepository.getAllCourses());
 		}	
 		public IActionResult getCoursesByCategory(int CatID)
@@ -47,9 +47,9 @@ namespace onlineCourses.Controllers
 				return Json(courses);
 			}
 		}
-		public IActionResult CourseDetails(int id)
+		public async Task<IActionResult> CourseDetails(int id)
 		{
-			return View(courseRepository.getCourseByID(id));
+			return View( courseRepository.getCourseByID(id));
 		}
 		[HttpGet]
 		public IActionResult NewCourse()
