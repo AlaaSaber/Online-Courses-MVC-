@@ -2,21 +2,25 @@
 using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Models;
 using onlineCourses.Repository;
+using onlineCourses.Repository.Courses;
 
 namespace onlineCourses.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ICategoryRepository _categoryRepository;
-        public HomeController(ICategoryRepository categoryRepository)
+        private readonly ICourseRepository _courseRepository;
+		public HomeController(ICategoryRepository categoryRepository, ICourseRepository courseRepository)
         {
             _categoryRepository = categoryRepository;
+            _courseRepository = courseRepository;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             var categories = _categoryRepository.GetAll();
             ViewBag.coursesCount = await _categoryRepository.CategoryCoursesCount();
+			ViewBag.courses = _courseRepository.getAllCourses();
 
             return View(categories);
         }

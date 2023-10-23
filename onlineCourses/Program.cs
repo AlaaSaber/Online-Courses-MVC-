@@ -50,6 +50,7 @@ namespace onlineCourses
 
             builder.Services.AddScoped<IExamRepository, ExamRepository>();
             builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+            builder.Services.AddScoped<IQuestionTypeRepository, QuestionTypeRepository>();
 
 
             var app = builder.Build();

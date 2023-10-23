@@ -31,7 +31,7 @@ namespace onlineCourses.Controllers
         [ValidateAntiForgeryToken]
         public async  Task<IActionResult> Register(RegisterVM registerVM)
         {
-            if(!ModelState.IsValid)
+			if (!ModelState.IsValid)
             {
                 return View(registerVM);
             }
@@ -145,6 +145,11 @@ namespace onlineCourses.Controllers
             await signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }
