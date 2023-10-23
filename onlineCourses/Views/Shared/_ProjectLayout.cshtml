@@ -37,11 +37,16 @@
                             <li>
                                 <a asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                             </li>
-                            @if(User.Identity.IsAuthenticated)
+                            @if(User.IsInRole("Instructor"))
                             {
                             <li>
                                 <a asp-area="" asp-controller="Instructor" asp-action="Details" >MyProfile</a>
-                            </li>                                
+                                </li>
+                            }else if (User.IsInRole("Student"))
+                            {
+                                <li>
+                                    <a asp-area="" asp-controller="Student" asp-action="Details" asp-route-Name="@User.Identity.Name">MyProfile</a>
+                                </li>
                             }
                         </ul>
                         

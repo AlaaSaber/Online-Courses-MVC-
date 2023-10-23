@@ -19,7 +19,7 @@ namespace onlineCourses.Controllers
 
         public IActionResult Index()
         {
-            var s=_StudentRepository.GetAll();
+            Student s=_StudentRepository.GetStudent(User.Identity.Name);
             return View(s);
         }
         [Authorize]

@@ -17,6 +17,11 @@ namespace onlineCourses.Repository
 
         public void Enroll(string studentId, int? courseid)
         {
+            var koko = _dbContext.Student_Courses.Where(c => c.Stud_Id.Equals(studentId) && c.Course_Id==courseid).FirstOrDefault();
+            if (koko!=null)
+            {
+                return;
+            }
             var courses = new Student_Course();
             courses.Stud_Id = studentId;
             courses.Course_Id = courseid;

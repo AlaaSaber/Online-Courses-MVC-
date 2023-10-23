@@ -129,7 +129,6 @@
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\khaledTP-O1GA8Y5E.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\mahmoudclawns.jpg))">
-<<<<<<< HEAD
       <SourceType>Package</SourceType>
       <SourceId>onlineCourses</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
@@ -226,11 +225,6 @@
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\circle-progress.min.js))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\main.js))">
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d488c06c06970dbd6aa0f2dfff4e4c1752ab44fa
->>>>>>> 7b1e229e664d8c1f3360258f2b608ed250059011
       <SourceType>Package</SourceType>
       <SourceId>onlineCourses</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
