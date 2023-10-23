@@ -22,6 +22,7 @@ namespace onlineCourses.Controllers
             var s=_StudentRepository.GetAll();
             return View(s);
         }
+        [Authorize]
         public IActionResult Details(string Name)
         {
             var s = _StudentRepository.GetStudent(Name);
