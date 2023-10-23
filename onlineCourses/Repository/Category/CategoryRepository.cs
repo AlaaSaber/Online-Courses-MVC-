@@ -30,7 +30,7 @@ namespace onlineCourses.Repository
                 courseCount = _dbContext.Entry(category)
                 .Collection(c => c.Courses)
                 .Query()
-                .Count();
+                .Count(x=> x.IsDeleted==false);
 
                 coursesCount.Add(category.Name, courseCount);
             }
@@ -55,7 +55,7 @@ namespace onlineCourses.Repository
                 return null;
             }
             var courses = await _dbContext.Courses
-                .Where(c => c.IsDeleted==false & c.cat_id == category.Id)
+                .Where(c => c.IsDeleted == false & c.cat_id == category.Id).Include(x=>x.Instructor)
                 .ToListAsync();
             int count = 0;
             foreach(Course course in courses)

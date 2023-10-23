@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-controller="Home" asp-action="Index">Course</a>
+            <span>Edit Course</span>
+        </div>
+    </div>
+</div>
 
 @if (Model.Count() > 0)
 {

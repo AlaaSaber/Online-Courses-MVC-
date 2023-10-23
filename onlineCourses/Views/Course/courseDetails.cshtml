@@ -4,6 +4,15 @@
 	string InsName;
 }
 
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+	<div class="container">
+		<div class="site-breadcrumb">
+			<a asp-controller="Home" asp-action="Index">Course</a>
+			<span>Course Details</span>
+		</div>
+	</div>
+</div>
+
 <h1 class="text-center p-3 bg-light">courseDetails</h1>
 
 <table class="table table-bordered text-center">
@@ -17,6 +26,8 @@
 		<th>Degree</th>
 		<th>Duration</th>
 		<th>Created Date</th>
+		<th>Lecture</th>
+		<th>Exam</th>
 		@if(User.IsInRole("Instructor"))
 		{
 		<th>Students Enrolled</th>
@@ -33,10 +44,15 @@
 		<td>@Model.Grade</td>
 		<td>@Model.Duration</td>
 		<td>@Model.Created</td>
+		<td><a class="btn btn-outline-primary" asp-action="Index" asp-controller="Lecture" asp-route-id="@Model.Id">Show All</a></td>
+		<td><a class="btn btn-outline-primary" asp-action="Index" asp-controller="Exam" asp-route-crs_id="@Model.Id">Show</a></td>
 		@if (User.IsInRole("Instructor"))
 		{
 		<td>@ViewBag.Count</td>
-		<td><a class="btn-danger" asp-action="EditCourse" asp-controller="Course" asp-route-id="@Model.Id">Edit</a></td>
+		<td>
+		<a class="btn btn-danger" asp-action="EditCourse" asp-controller="Course" asp-route-id="@Model.Id">Edit</a>
+
+		</td>
 		}
 	</tr>
 </table>

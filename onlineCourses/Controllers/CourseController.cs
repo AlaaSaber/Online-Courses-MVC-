@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Data.ViewModels.CourseViewModels;
 using onlineCourses.Models;
 using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.InstructorRepo;
+using onlineCourses.Repository.Lectures;
 
 namespace onlineCourses.Controllers
 {
@@ -58,6 +60,7 @@ namespace onlineCourses.Controllers
             return View(course);
 		}
 		[HttpGet]
+		[Authorize(Roles ="Instructor")]
 		public IActionResult NewCourse()
 		{
 			ViewBag.cats = categoryRepository.GetAll();
@@ -79,7 +82,7 @@ namespace onlineCourses.Controllers
 				course.Created = DateTime.Now;
 				course.IsDeleted = false;
 				course.cat_id = addCourseModel.categoryID;
-				course.ins_id = InstructorController.Instructor_ID;
+				course.ins_id = HomeController.Instructor_ID;
 				courseRepository.AddCourse(course);
 				courseRepository.saveDB();
 				return RedirectToAction("Home","Instructor");
@@ -88,6 +91,7 @@ namespace onlineCourses.Controllers
 		}
 
 		[HttpGet]
+		[Authorize(Roles = "Instructor")]
 		public IActionResult EditCourse(int id)
 		{
 			Course course = courseRepository.getCourseByID(id);
@@ -99,9 +103,7 @@ namespace onlineCourses.Controllers
 			addCourseModel.Duration = course.Duration;
 			addCourseModel.Grade = course.Grade;
 			addCourseModel.categoryID = course.cat_id ?? 0;
-
 			ViewBag.id = id;
-
 			ViewBag.cats = categoryRepository.GetAll();
 
 			return View(addCourseModel);
@@ -123,20 +125,20 @@ namespace onlineCourses.Controllers
 				course.cat_id = addCourseModel.categoryID;
 				courseRepository.UpdateCourse(course);
 				courseRepository.saveDB();
-				return RedirectToAction("index");
+				return RedirectToAction("Home", "Instructor");
 			}
 			ViewBag.cats = categoryRepository.GetAll();
 			return View(addCourseModel);
 		}
-
+		[Authorize(Roles ="Instructor")]
 		public ActionResult DeleteCourse(int id)
 		{
 			Course course = courseRepository.getCourseByID(id);
 			course.IsDeleted = true;
 			courseRepository.UpdateCourse(course);
 			courseRepository.saveDB();
-			return RedirectToAction("index");
-		}
+            return RedirectToAction("Home", "Instructor");
+        }
 
-	}
+    }
 }

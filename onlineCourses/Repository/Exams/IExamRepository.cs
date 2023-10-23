@@ -5,7 +5,7 @@ namespace onlineCourses.Repository.Exams
     public interface IExamRepository
     {
         List<Exam> getExamByName (string Name);
-		List<Exam> getExamByCourseID (int ID);
+        Exam getExamByCourseID(int ID);
         Exam getExamByID(int ID);
         void UpdateExam (Exam exam);
         void DeleteExam (Exam exam);

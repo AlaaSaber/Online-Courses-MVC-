@@ -44,7 +44,8 @@ namespace onlineCourses
 
             builder.Services.AddIdentityCore<Instructor>().AddEntityFrameworkStores<DBContext>();
 
-			      builder.Services.AddScoped<ILectureRepository, LectureRepository>();
+			builder.Services.AddScoped<ILectureRepository, LectureRepository>();
+			builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
 			builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -76,7 +77,7 @@ namespace onlineCourses
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Course}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             AppDbInitializer.SeedRolesAsync(app).Wait();
 

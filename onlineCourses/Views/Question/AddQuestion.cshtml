@@ -5,6 +5,15 @@
     SelectList listItems = new SelectList(ViewBag.QuesTypes, "Id", "Name");
 }
 
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-controller="Home" asp-action="Index">Course</a>
+            <span>Edit Course</span>
+        </div>
+    </div>
+</div>
+
 <h1>Question</h1>
 
 <h4>Add Question</h4>
@@ -49,6 +58,8 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            <input type="submit" value="Add Another Question" asp-route-newQ="true" class="btn btn-primary" />
+
         </form>
         
         <form asp-action="AddQuestion" id="MCQ" style="display:none">
@@ -81,6 +92,7 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+                <input type="submit" value="Add Another Question" asp-route-newQ="true" class="btn btn-primary" />
         </form>
     </div>
 </div>

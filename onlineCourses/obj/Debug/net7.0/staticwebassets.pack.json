@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\onlineCourses.bundle.scp.css"
     },
     {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\Images\\ahmedTP-O1GA8Y5E.jpg",
+      "PackagePath": "staticwebassets\\Images\\ahmedTP-O1GA8Y5E.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\Images\\khaledTP-O1GA8Y5E.jpg",
+      "PackagePath": "staticwebassets\\Images\\khaledTP-O1GA8Y5E.jpg"
+    },
+    {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\Images\\mahmoudIMG-20210728-WA0112.jpg",
       "PackagePath": "staticwebassets\\Images\\mahmoudIMG-20210728-WA0112.jpg"
     },
@@ -21,16 +29,204 @@
       "PackagePath": "staticwebassets\\Images\\userclawns.jpg"
     },
     {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\add.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\add.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\3.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\4.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\4.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\5.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\5.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\6.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\6.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\7.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\7.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\authors\\8.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\authors\\8.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\bg.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\bg.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\blog\\1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\blog\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\blog\\2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\blog\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\blog\\3.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\blog\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\3.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\4.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\4.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\5.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\5.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\categories\\6.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\categories\\6.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\3.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\4.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\4.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\5.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\5.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\6.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\6.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\7.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\7.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\8.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\8.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\f-1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\f-1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\f-2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\f-2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\courses\\single.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\courses\\single.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\favicon.ico",
+      "PackagePath": "staticwebassets\\SiteImages\\favicon.ico"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\logo.png",
+      "PackagePath": "staticwebassets\\SiteImages\\logo.png"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-bg\\1.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-bg\\1.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-bg\\2.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-bg\\2.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-bg\\3.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-bg\\3.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-bg\\4.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-bg\\4.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-bg\\5.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-bg\\5.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\page-top-bg.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\page-top-bg.jpg"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\SiteImages\\signup-bg.jpg",
+      "PackagePath": "staticwebassets\\SiteImages\\signup-bg.jpg"
+    },
+    {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\css\\Category.css",
       "PackagePath": "staticwebassets\\css\\Category.css"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\css\\owl.carousel.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.css"
     },
     {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\circle-progress.min.js",
+      "PackagePath": "staticwebassets\\js\\circle-progress.min.js"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\map.js",
+      "PackagePath": "staticwebassets\\js\\map.js"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\js\\mixitup.min.js"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
     },
     {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\js\\site.js",
@@ -8327,6 +8523,22 @@
     {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.css.map"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-theme.min.css.map"
     },
     {
       "Id": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",

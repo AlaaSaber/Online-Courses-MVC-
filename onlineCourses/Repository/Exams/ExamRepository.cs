@@ -24,9 +24,9 @@ namespace onlineCourses.Repository.Courses
 			throw new NotImplementedException();
 		}
 
-		public List<Exam> getExamByCourseID(int ID)
+		public Exam getExamByCourseID(int ID)
 		{
-			return dBContext.Exams.Where(e => e.crs_id == ID).ToList();
+			return dBContext.Exams.FirstOrDefault(e => e.crs_id == ID);
 		}
         public Exam getExamByID(int ID)
         {

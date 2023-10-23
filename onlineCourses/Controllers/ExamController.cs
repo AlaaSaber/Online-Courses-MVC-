@@ -3,6 +3,7 @@ using onlineCourses.Data.ViewModels.ExamViewModels;
 using onlineCourses.Models;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
+using onlineCourses.Repository.Questions;
 
 namespace onlineCourses.Controllers
 {
@@ -10,26 +11,34 @@ namespace onlineCourses.Controllers
 	{
 		private IExamRepository examRepository;
         private ICourseRepository courseRepository;
+		private IQuestionRepository questionRepository;
 
-        public ExamController(IExamRepository examRepository,ICourseRepository courseRepository) 
+        public ExamController(IQuestionRepository questionRepository, IExamRepository examRepository,ICourseRepository courseRepository) 
 		{
 			this.examRepository = examRepository;
             this.courseRepository = courseRepository;
+			this.questionRepository = questionRepository;
         }
-		public IActionResult getExamsByName(string name)
+		public IActionResult index(int crs_id)
 		{
-			List<Exam> exams = examRepository.getExamByName(name);
-			var examsList = exams.Select(e=>new {e.Id,e.Name,e.Duration,e.crs_id}).ToList();
-
-			return Json(examsList);
+			Exam exam = examRepository.getExamByCourseID(crs_id);
+			if(exam != null)
+			ViewData["Questions"] = questionRepository.getAllQuestions(exam.Id);
+			return View(exam);
 		}
-		public IActionResult getExamsByCourseID(int ID)
-		{
-			List<Exam> exams = examRepository.getExamByCourseID(ID);
-			var examsList = exams.Select(e => new { e.Id, e.Name, e.Duration }).ToList();
+		//public IActionResult getExamsByName(string name)
+		//{
+		//	List<Exam> exams = examRepository.getExamByName(name);
+		//	var examsList = exams.Select(e=>new {e.Id,e.Name,e.Duration,e.crs_id}).ToList();
 
-			return Json(examsList);
-		}
+		//	return Json(examsList);
+		//}
+		//public IActionResult getExamsByCourseID(int ID)
+		//{
+		//	Exam exams = examRepository.getExamByCourseID(ID);
+		//	var examsList = exams.Select(e => new { e.Id, e.Name, e.Duration }).ToList();
+		//	return Json(examsList);
+		//}
 		[HttpGet]
 		public IActionResult AddExam()
 		{
@@ -50,7 +59,7 @@ namespace onlineCourses.Controllers
 				{
 					examRepository.AddExam(exam);
 					examRepository.saveDB();
-					return RedirectToAction("index","Course");
+					return RedirectToAction("AddQuestion", "Question" , new { ExamID = exam.Id});
 				}
 				catch (Exception ex)
 				{

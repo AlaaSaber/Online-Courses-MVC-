@@ -2,6 +2,15 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-controller="Lecture" asp-action="Index" asp-route-id="@Model.crs_id">Lecture</a>
+            <span>Edit Lecture</span>
+        </div>
+    </div>
+</div>
+
 <h1>Edit</h1>
 <form method="post" asp-action="SaveEdit">
     <div>
@@ -10,7 +19,6 @@
         </label>
         <input class="form-control" asp-for="Name" />
         <span asp-validation-for="Name" class="text-danger"></span>
-
     </div>
 
     <div>
@@ -30,6 +38,10 @@
         <span asp-validation-for="Duration" class="text-danger"></span>
 
     </div>
+    <input class="form-control" hidden asp-for="ins_id" />
+    <input class="form-control" hidden asp-for="Id" />
+    <input class="form-control" hidden asp-for="crs_id" />
+
 
     @*  <div>
     <label asp-for="ins_id">Instructor</label>
