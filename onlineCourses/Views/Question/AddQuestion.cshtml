@@ -4,7 +4,17 @@
     ViewData["Title"] = "Add Question";
     SelectList listItems = new SelectList(ViewBag.QuesTypes, "Id", "Name");
 }
-
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/4.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-action="Index" asp-controller="Home">Home</a>
+            <a asp-action="Index" asp-controller="Home">Question</a>
+            <span>Add Question</span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
 <h1>Question</h1>
 
 <h4>Add Question</h4>
@@ -17,6 +27,9 @@
             <select asp-for="qust_type" asp-items="listItems" id="QType" class="form-control" onchange="questionType()">
                 <option value="0" selected disabled>--Select Question Type--</option>
             </select>
+            <p>
+                <a class="site-btn mt-3" asp-action="Create" asp-controller="QuestionType">Create Question Type</a>
+            </p>
         </div>
 
         <form asp-action="AddQuestion" id="TF" style="display:none">
