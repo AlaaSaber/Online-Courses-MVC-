@@ -54,10 +54,8 @@ namespace onlineCourses.Repository
             {
                 return null;
             }
-
             var courses = await _dbContext.Courses
-                .Where(c => c.cat_id == category.Id)
-                .Include(c => c.Instructor)
+                .Where(c => c.IsDeleted==false & c.cat_id == category.Id)
                 .ToListAsync();
             int count = 0;
             foreach(Course course in courses)

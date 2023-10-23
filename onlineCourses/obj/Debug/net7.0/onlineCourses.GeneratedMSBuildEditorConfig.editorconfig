@@ -9,113 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = onlineCourses
 build_property.RootNamespace = onlineCourses
-build_property.ProjectDir = E:\ITI\Projects\MVC ERD NEW\MVC-Project\onlineCourses\
+build_property.ProjectDir = E:\ITI\Projects\MVC Latest\MVC-Project\onlineCourses\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\ITI\Projects\MVC ERD NEW\MVC-Project\onlineCourses
+build_property.MSBuildProjectDirectory = E:\ITI\Projects\MVC Latest\MVC-Project\onlineCourses
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Account/Login.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Account/Register.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Category/Courses.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Category/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ291cnNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Category/Create.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Category/Delete.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Category/Edit.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Category/Index.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Course/courseDetails.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Course/courseDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXGNvdXJzZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Course/EditCourse.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Course/EditCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Course/Index.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Course/NewCourse.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Course/NewCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXE5ld0NvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Exam/AddExam.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Exam/AddExam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxBZGRFeGFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Exam/EditExam.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Exam/EditExam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxFZGl0RXhhbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Home/Index.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Home/Privacy.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Lecture/Edit.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Instructor/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Lecture/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Lecture/Index.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Lecture/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Lecture/New.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Lecture/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Question/AddQuestion.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Question/AddQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQWRkUXVlc3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Shared/Error.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Shared/_ProjectLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9qZWN0TGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Student/Details.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Student/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Student/Index.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/_ViewImports.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/_ViewStart.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI/Projects/MVC ERD NEW/MVC-Project/onlineCourses/Views/Shared/_Layout.cshtml]
+[E:/ITI/Projects/MVC Latest/MVC-Project/onlineCourses/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yj8qnnglg9

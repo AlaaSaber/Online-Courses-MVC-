@@ -6,6 +6,7 @@ using onlineCourses.Models;
 using onlineCourses.Repository;
 using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
+using onlineCourses.Repository.InstructorRepo;
 using onlineCourses.Repository.Lectures;
 using onlineCourses.Repository.Questions;
 
@@ -43,12 +44,14 @@ namespace onlineCourses
 
             builder.Services.AddIdentityCore<Instructor>().AddEntityFrameworkStores<DBContext>();
 
-			      builder.Services.AddScoped<ILectureRepository, LectureRepository>();
+			builder.Services.AddScoped<ILectureRepository, LectureRepository>();
 
 			builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 
-            builder.Services.AddScoped<IExamRepository, ExamRepository>();
+			builder.Services.AddScoped<IExamRepository, ExamRepository>();
             builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
             builder.Services.AddScoped<IQuestionTypeRepository, QuestionTypeRepository>();
 
@@ -75,7 +78,7 @@ namespace onlineCourses
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Course}/{action=Index}/{id?}");
 
             AppDbInitializer.SeedRolesAsync(app).Wait();
 

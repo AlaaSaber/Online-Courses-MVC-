@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TxkuzTBdTjyhO7gOkoFV7ZFFfEInHW/XVmvcMdUKiVV2vhDyTCXtZ/+3xdd8HNE0fu1w0nOQ7cQDTL2xGShBlw==",
+  "dgSpecHash": "rZ4p1JaA++wojD4a5kJ25hfQAaZU58iugE8WzU3A7xB5Fo5cxAplqU2h9XSqZlxCwUqRF4AaJxp48x9rmx/zeg==",
   "success": true,
-  "projectFilePath": "E:\\ITI\\Projects\\MVC ERD NEW\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
+  "projectFilePath": "E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\T480\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\T480\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -232,5 +232,12 @@
     "C:\\Users\\T480\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\T480\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

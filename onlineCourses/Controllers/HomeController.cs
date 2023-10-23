@@ -20,7 +20,8 @@ namespace onlineCourses.Controllers
         {
             var categories = _categoryRepository.GetAll();
             ViewBag.coursesCount = await _categoryRepository.CategoryCoursesCount();
-			ViewBag.courses = _courseRepository.getAllCourses();
+
+			      ViewBag.courses = _courseRepository.getAllCourses();
 
             return View(categories);
         }
