@@ -49,6 +49,7 @@ namespace onlineCourses
 			builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+
             builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 
 			builder.Services.AddScoped<IExamRepository, ExamRepository>();
@@ -80,7 +81,7 @@ namespace onlineCourses
                 name: "default",
                 pattern: "{controller=Course}/{action=Index}/{id?}");
 
-            AppDbInitializer.SeedRolesAsync(app).Wait();
+                AppDbInitializer.SeedRolesAsync(app).Wait();
 
             app.Run();
 
