@@ -25,7 +25,6 @@ namespace onlineCourses.Controllers
         public async Task<IActionResult> Courses(string categoryName)
         {
             var courses = await _categoryRepository.GetCategoryCourses(categoryName);
-
             return View(courses);
         }
 
