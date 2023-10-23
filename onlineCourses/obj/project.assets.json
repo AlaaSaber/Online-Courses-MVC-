@@ -11383,19 +11383,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KhaLeDz\\.nuget\\packages\\": {}
+    "C:\\Users\\T480\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
+      "projectUniqueName": "E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
       "projectName": "onlineCourses",
-      "projectPath": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
-      "packagesPath": "C:\\Users\\KhaLeDz\\.nuget\\packages\\",
-      "outputPath": "F:\\ITI\\9-Week\\MVC\\Project\\New folder\\MVC-Project\\onlineCourses\\obj\\",
+      "projectPath": "E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\onlineCourses.csproj",
+      "packagesPath": "C:\\Users\\T480\\.nuget\\packages\\",
+      "outputPath": "E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\KhaLeDz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\T480\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11462,5 +11467,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file E:\\ITI\\Projects\\MVC Latest\\MVC-Project\\onlineCourses\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

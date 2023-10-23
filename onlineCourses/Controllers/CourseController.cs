@@ -23,6 +23,7 @@ namespace onlineCourses.Controllers
 		}
 		public IActionResult Index()
 		{
+
 			ViewBag.cats = categoryRepository.GetAll();
 			return View(courseRepository.getAllCourses());
 			

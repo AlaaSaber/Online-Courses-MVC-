@@ -20,13 +20,21 @@ namespace onlineCourses.Repository.Questions
         {
             dBContext.Questions.Remove(question);
         }
-
+        public void DeleteQuestions(int ExamID)
+        {
+            foreach (var question in getAllQuestions(ExamID))
+                dBContext.Questions.Remove(question);
+        }
         public List<Question> getAllQuestions(int ExamID)
         {
             return dBContext.Questions.Include(x=>x.QuestionType).Where(q => q.exam_id == ExamID).ToList();
         }
+		public Question getQuestionByID(int id)
+		{
+			return dBContext.Questions.Where(q => q.Id == id).FirstOrDefault();
+		}
 
-        public int saveDB()
+		public int saveDB()
         {
             return dBContext.SaveChanges();
         }

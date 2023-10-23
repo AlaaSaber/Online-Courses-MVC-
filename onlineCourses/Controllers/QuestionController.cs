@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using onlineCourses.Data.ViewModels.QuestionViewModels;
 using onlineCourses.Models;
+using onlineCourses.Repository.Courses;
 using onlineCourses.Repository.Exams;
 using onlineCourses.Repository.Questions;
 
@@ -58,5 +59,27 @@ namespace onlineCourses.Controllers
             ViewBag.QuesTypes = questionTypes;
             return View(addQuestionModel);
         }
-    }
+        public ActionResult DeleteQuestion(int id) 
+        {
+            Question question = questionRepository.getQuestionByID(id);
+
+			questionRepository.DeleteQuestion(question);
+            questionRepository.saveDB();
+			return RedirectToAction("CourseDetails", "Course", new
+			{
+				id = examRepository.getExamByID(question.exam_id ?? 0).crs_id
+			});
+		}
+		public ActionResult DeleteExamQuestions(int ExamID)
+		{
+			Exam exam= examRepository.getExamByID(ExamID);
+
+			questionRepository.DeleteQuestions(ExamID);
+			questionRepository.saveDB();
+			return RedirectToAction("CourseDetails", "Course", new
+			{
+				id = exam.crs_id
+			});
+		}
+	}
 }

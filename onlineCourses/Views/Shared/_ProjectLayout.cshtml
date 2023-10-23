@@ -37,7 +37,7 @@
                             <li>
                                 <a asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                             </li>
-                            @if (User.IsInRole("Instructor"))
+                            @if(User.Identity.IsAuthenticated)
                             {
                             <li>
                                 <a asp-area="" asp-controller="Instructor" asp-action="Details" >MyProfile</a>
