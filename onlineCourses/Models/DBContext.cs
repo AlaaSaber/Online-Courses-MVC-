@@ -26,7 +26,12 @@ namespace onlineCourses.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+<<<<<<< HEAD
             optionsBuilder.UseSqlServer("Server=MOSTAFAMAGED\\SQLEXPRESS;Database=ITI_MVC_Project;Trusted_Connection=True;TrustServerCertificate=True;");
+=======
+            optionsBuilder.UseSqlServer("Server=DESKTOP-GO0QS3N;Database=MVC_OnlineCourses;Trusted_Connection=True;TrustServerCertificate=True;");
+
+>>>>>>> b0096f30212ca2c0c92995f8b060bfb34de450fc
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {

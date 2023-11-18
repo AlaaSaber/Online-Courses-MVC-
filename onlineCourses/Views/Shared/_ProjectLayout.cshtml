@@ -28,12 +28,26 @@
                             <li>
                                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
+                            @if (!User.IsInRole("Instructor"))
+                            {
                             <li>
                                 <a asp-area="" asp-controller="Course" asp-action="Index">Courses</a>
-                            </li>
+                            </li>      
+                            }
                             <li>
                                 <a asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                             </li>
+                            @if(User.IsInRole("Instructor"))
+                            {
+                            <li>
+                                <a asp-area="" asp-controller="Instructor" asp-action="Details" >MyProfile</a>
+                                </li>
+                            }else if (User.IsInRole("Student"))
+                            {
+                                <li>
+                                    <a asp-area="" asp-controller="Student" asp-action="Details" asp-route-Name="@User.Identity.Name">MyProfile</a>
+                                </li>
+                            }
                         </ul>
                         
                     </nav>

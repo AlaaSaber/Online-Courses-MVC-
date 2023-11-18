@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace onlineCourses.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class lecture : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -189,28 +189,6 @@ namespace onlineCourses.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Lectures",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Duration = table.Column<float>(type: "real", nullable: false),
-                    ins_id = table.Column<string>(type: "nvarchar(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Lectures", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Lectures_AspNetUsers_ins_id",
-                        column: x => x.ins_id,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Courses",
                 columns: table => new
                 {
@@ -260,6 +238,35 @@ namespace onlineCourses.Migrations
                         column: x => x.crs_id,
                         principalTable: "Courses",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Lectures",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Duration = table.Column<float>(type: "real", nullable: false),
+                    ins_id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    crs_id = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lectures", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Lectures_AspNetUsers_ins_id",
+                        column: x => x.ins_id,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Lectures_Courses_crs_id",
+                        column: x => x.crs_id,
+                        principalTable: "Courses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -364,6 +371,11 @@ namespace onlineCourses.Migrations
                 column: "crs_id",
                 unique: true,
                 filter: "[crs_id] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Lectures_crs_id",
+                table: "Lectures",
+                column: "crs_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lectures_ins_id",

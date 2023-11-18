@@ -18,6 +18,7 @@ namespace onlineCourses.Models
         public string? ins_id { get; set; }
         public virtual Instructor? Instructor { get; set; }
         public virtual ICollection<Student_Course>? Student_Course { get; set; }
+        public virtual ICollection<Lecture>? Course_Lecture { get; set; }
         public virtual Exam? Exam { get; set; }
 
         [ForeignKey("Category")]

@@ -12,8 +12,8 @@ using onlineCourses.Models;
 namespace onlineCourses.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20231020203632_v1")]
-    partial class v1
+    [Migration("20231022211505_lecture")]
+    partial class lecture
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -350,20 +350,27 @@ namespace onlineCourses.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<float>("Duration")
                         .HasColumnType("real");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("crs_id")
+                        .HasColumnType("int");
 
                     b.Property<string>("ins_id")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("crs_id");
 
                     b.HasIndex("ins_id");
 
@@ -531,6 +538,12 @@ namespace onlineCourses.Migrations
 
             modelBuilder.Entity("onlineCourses.Models.Lecture", b =>
                 {
+                    b.HasOne("onlineCourses.Models.Course", "course")
+                        .WithMany("Course_Lecture")
+                        .HasForeignKey("crs_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("onlineCourses.Models.Instructor", "Instructor")
                         .WithMany("Lectures")
                         .HasForeignKey("ins_id")
@@ -538,6 +551,8 @@ namespace onlineCourses.Migrations
                         .IsRequired();
 
                     b.Navigation("Instructor");
+
+                    b.Navigation("course");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Question", b =>
@@ -581,6 +596,8 @@ namespace onlineCourses.Migrations
 
             modelBuilder.Entity("onlineCourses.Models.Course", b =>
                 {
+                    b.Navigation("Course_Lecture");
+
                     b.Navigation("Exam");
 
                     b.Navigation("Student_Course");

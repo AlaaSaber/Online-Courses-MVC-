@@ -1,13 +1,22 @@
 ﻿@model Student
 
-@{
-    Layout = "_Layout";
-}
-@*@inject onlineCourses.Repository.Courses.ICourseRepository sc
-@{
-    SelectList items = new SelectList(sc.getCourseByI, "Id", "Name");
-}*@
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-controller="Home" asp-action="Index">Profile</a>
+            <span>Details</span>
+        </div>
+    </div>
+</div>
+
 <h1>student Details</h1>
+<div class="form-group mt-2">
+
+    <td>
+        <img src="~/Images/@Model.ImageURL" class="img-fluid rounded " width="100" height="90" alt="Student images" />
+    </td>
+    
+</div>
 <div class="form-group">
     <label asp-for="UserName" class="col-form-label"></label>
     <input asp-For="UserName" class="form-control" readonly />
@@ -27,19 +36,12 @@
     <label asp-for="PhoneNumber" class="col-form-label"></label>
     <input asp-For="PhoneNumber" class="form-control" readonly />
 </div>
-<div class="form-group mt-2">
-
-    <td>
-        <img src="~/Images/@Model.ImageURL" class="img-fluid rounded " width="100" height="90" alt="Student images" />
-    </td>
-    
-</div>
 
 <td>
     <h3>courses</h3>
     @foreach (var course in Model.Student_Course)
     {
-      <td><li>@course.Course.Name</li></td>
+    <td><a class="btn btn-outline-danger" asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Course.Id"> @course.Course.Name </a></td>
     }
 
 </td>  

@@ -19,9 +19,10 @@ namespace onlineCourses.Controllers
 
         public IActionResult Index()
         {
-            var s=_StudentRepository.GetAll();
+            Student s=_StudentRepository.GetStudent(User.Identity.Name);
             return View(s);
         }
+        [Authorize]
         public IActionResult Details(string Name)
         {
             var s = _StudentRepository.GetStudent(Name);

@@ -1,4 +1,5 @@
-﻿using onlineCourses.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using onlineCourses.Models;
 
 namespace onlineCourses.Repository.Questions
 {
@@ -26,7 +27,7 @@ namespace onlineCourses.Repository.Questions
         }
         public List<Question> getAllQuestions(int ExamID)
         {
-            return dBContext.Questions.Where(q=>q.exam_id == ExamID).ToList();
+            return dBContext.Questions.Include(x=>x.QuestionType).Where(q => q.exam_id == ExamID).ToList();
         }
 		public Question getQuestionByID(int id)
 		{

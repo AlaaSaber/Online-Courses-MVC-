@@ -12,8 +12,7 @@ namespace onlineCourses.Repository.Lectures
 		}
 		public void AddLecture(Lecture lecture)
 		{
-			dBContext.Add(lecture);
-
+			dBContext.Lectures.Add(lecture);
 		}
 
 		public void DeleteLecture(Lecture lecture)
@@ -28,9 +27,13 @@ namespace onlineCourses.Repository.Lectures
 		{
 			return dBContext.Lectures.Where(l => l.Id == ID).FirstOrDefault();
 		}
-		public int saveDB()
+		public List<Lecture> getLecByCourseID(int id)
 		{
-			return dBContext.SaveChanges();
+			return dBContext.Lectures.Where(x=>x.crs_id==id).ToList();
+		}
+		public void saveDB()
+		{
+		  dBContext.SaveChanges();
 		}
 
 		public void UpdateLec(Lecture lecture)

@@ -7,8 +7,10 @@ namespace onlineCourses.Repository.Lectures
 		void AddLecture(Lecture lecture);
 		void DeleteLecture(Lecture lecture);
 		List<Lecture> getAllLectures();
-		Lecture getLecByID(int ID);
-		int saveDB();
+		List<Lecture> getLecByCourseID(int id);
+
+        Lecture getLecByID(int ID);
+		void saveDB();
 		void UpdateLec(Lecture lecture);
 	}
 }

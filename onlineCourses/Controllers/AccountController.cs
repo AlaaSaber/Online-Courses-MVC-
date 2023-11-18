@@ -32,7 +32,7 @@ namespace onlineCourses.Controllers
         [ValidateAntiForgeryToken]
         public async  Task<IActionResult> Register(RegisterVM registerVM)
         {
-            if(!ModelState.IsValid)
+			if (!ModelState.IsValid)
             {
                 return View(registerVM);
             }
@@ -61,6 +61,19 @@ namespace onlineCourses.Controllers
                     PasswordHash = registerVM.Password
                 };
             }
+            else
+            {
+				user = new Instructor()
+				{
+					UserName = registerVM.UserName,
+					Age = registerVM.Age,
+					Address = registerVM.Address,
+					Email = registerVM.Email,
+					PhoneNumber = registerVM.PhoneNumber,
+					Gender = registerVM.Gender,
+					PasswordHash = registerVM.Password
+				};
+			}
 
             var result = await userManager.CreateAsync(user, registerVM.Password);
 
@@ -91,16 +104,15 @@ namespace onlineCourses.Controllers
                 {
                     await userManager.AddToRoleAsync(user, UserRoles.Student);
                 }
-
-                await signInManager.SignInAsync(user, false);
-                if(User.IsInRole("Instructor"))
-                return RedirectToAction("Home", "Instructor");
+                else
+                {
+					await userManager.AddToRoleAsync(user, UserRoles.Instructor);
+				}
+				await signInManager.SignInAsync(user, false);
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-
-
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
@@ -150,6 +162,11 @@ namespace onlineCourses.Controllers
             await signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

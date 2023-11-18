@@ -5,6 +5,7 @@ namespace onlineCourses.Models
 {
     public class Lecture
     {
+        [Key]
         public int Id { get; set; }
 
 		[MinLength(3, ErrorMessage = "Name must be more than 2 letter")]
@@ -20,7 +21,11 @@ namespace onlineCourses.Models
         
         [ForeignKey("Instructor")]
         public string ins_id{ get; set; }
-        public Instructor Instructor { get; set; }
+        public Instructor? Instructor { get; set; }
+
+        [ForeignKey("course")]
+        public int crs_id {  get; set; }
+        public Course? course { get; set; }
 
     }
 }

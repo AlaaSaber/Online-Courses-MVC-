@@ -2,33 +2,37 @@
 @{
     ViewData["title"] = "Home";
 }
-<h1 class="w-100 bg-light text-center p-5">My Courses</h1>
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+	<div class="container">
+		<div class="site-breadcrumb">
+			<a asp-controller="Home" asp-action="index">Home</a>
+			<span>Instructor</span>
+		</div>
+	</div>
+</div>
+<h1 class="w-100 bg-light text-center p-5">Your Courses</h1>
 <a class="btn btn-outline-primary text-center d-block" asp-action="NewCourse" asp-controller="Course"> Add Course</a>
-<section id="MainSection">
-	<table class="table table-bordered text-center">
-		<thead>
-			<tr>
-				<th>name</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Degree</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody id="tableBody">
-			@foreach (var crs in Model)
+<section class="categories-section spad">
+	<div class="container">
+		<div class="row">
+			<!-- categorie -->
+			@foreach (Course course in Model)
 			{
-				<tr>
-					<td>@crs.Name</td>
-					<td>@crs.Title</td>
-					<td>@crs.Description</td>
-					<td>@crs.Grade</td>
-					<td>
-						<a asp-action="CourseDetails" asp-controller="Course" asp-route-id="@crs.Id" title="Course Details"><i class="bi bi-eye-fill"></i></a>
-						<a asp-action="EditCourse" asp-controller="Course" asp-route-id="@crs.Id" title="Edit Course"><i class="bi bi-pencil-square text-warning"></i></a>
-						<a asp-action="DeleteCourse" asp-controller="Course" asp-route-id="@crs.Id" title="Remove Course"><i class="bi bi-trash3-fill text-danger"></i></a>
-					</td>
-				</tr>
-			}
-		</tbody>
-	</table>
+				<div class="col-lg-4 col-md-6">
+					<div class="categorie-item">
+						<div class="ci-text text-center">
+							<h5>@course.Name</h5>
+							<p>@course.Title</p>
+							<p>@course.Description</p>
+							<div class="justify-content-evenly d-flex w-50 mx-auto">
+								<a asp-action="CourseDetails" asp-controller="Course" asp-route-id="@course.Id" title="Course Details"><i class="bi bi-eye-fill text-warning"></i></a>
+								<a asp-action="EditCourse" asp-controller="Course" asp-route-id="@course.Id" title="Edit Course"><i class="bi bi-pencil-square text-warning"></i></a>
+								<a asp-action="DeleteCourse" asp-controller="Course" asp-route-id="@course.Id" title="Remove Course"><i class="bi bi-trash3-fill text-warning"></i></a>
+						    </div>
+					    </div>
+				    </div>
+		        </div>
+				}
+				</div>
+				</section>
+

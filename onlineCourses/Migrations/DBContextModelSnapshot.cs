@@ -257,7 +257,7 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Course", b =>
@@ -307,7 +307,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Exam", b =>
@@ -334,7 +334,7 @@ namespace onlineCourses.Migrations
                         .IsUnique()
                         .HasFilter("[crs_id] IS NOT NULL");
 
-                    b.ToTable("Exams", (string)null);
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Lecture", b =>
@@ -347,14 +347,19 @@ namespace onlineCourses.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<float>("Duration")
                         .HasColumnType("real");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("crs_id")
+                        .HasColumnType("int");
 
                     b.Property<string>("ins_id")
                         .IsRequired()
@@ -362,9 +367,11 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("crs_id");
+
                     b.HasIndex("ins_id");
 
-                    b.ToTable("Lectures", (string)null);
+                    b.ToTable("Lectures");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Question", b =>
@@ -399,7 +406,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("qust_type");
 
-                    b.ToTable("Questions", (string)null);
+                    b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.QuestionType", b =>
@@ -416,7 +423,7 @@ namespace onlineCourses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("QuestionTypes", (string)null);
+                    b.ToTable("QuestionTypes");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Student_Course", b =>
@@ -434,7 +441,7 @@ namespace onlineCourses.Migrations
 
                     b.HasIndex("Course_Id");
 
-                    b.ToTable("Student_Courses", (string)null);
+                    b.ToTable("Student_Courses");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Instructor", b =>
@@ -528,6 +535,12 @@ namespace onlineCourses.Migrations
 
             modelBuilder.Entity("onlineCourses.Models.Lecture", b =>
                 {
+                    b.HasOne("onlineCourses.Models.Course", "course")
+                        .WithMany("Course_Lecture")
+                        .HasForeignKey("crs_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("onlineCourses.Models.Instructor", "Instructor")
                         .WithMany("Lectures")
                         .HasForeignKey("ins_id")
@@ -535,6 +548,8 @@ namespace onlineCourses.Migrations
                         .IsRequired();
 
                     b.Navigation("Instructor");
+
+                    b.Navigation("course");
                 });
 
             modelBuilder.Entity("onlineCourses.Models.Question", b =>
@@ -578,6 +593,8 @@ namespace onlineCourses.Migrations
 
             modelBuilder.Entity("onlineCourses.Models.Course", b =>
                 {
+                    b.Navigation("Course_Lecture");
+
                     b.Navigation("Exam");
 
                     b.Navigation("Student_Course");

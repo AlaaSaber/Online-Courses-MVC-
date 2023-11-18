@@ -34,7 +34,7 @@ namespace onlineCourses.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddQuestion(AddQuestionModel addQuestionModel)
+        public IActionResult AddQuestion(AddQuestionModel addQuestionModel,bool newQ=false)
         {
             if(ModelState.IsValid)
             {
@@ -46,10 +46,12 @@ namespace onlineCourses.Controllers
                 question.qust_type = addQuestionModel.qust_type;
                 questionRepository.AddQuestion(question);
                 questionRepository.saveDB();
-				return RedirectToAction("CourseDetails","Course",new
+                if (newQ)
                 {
-                    id = examRepository.getExamByID(question.exam_id ?? 0).crs_id
-				});
+                    return RedirectToAction("AddQuestion", "Question", new {ExamID = question.exam_id});
+                }
+                return RedirectToAction("CourseDetails","Course",
+                new {id= examRepository.getExamByID(question.exam_id ?? 0).crs_id });
             }
             List<QuestionType> questionTypes = new List<QuestionType>();
             questionTypes.Add(new QuestionType() { Id = 1, Name = "TF" });

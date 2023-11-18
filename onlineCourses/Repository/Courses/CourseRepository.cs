@@ -23,7 +23,10 @@ namespace onlineCourses.Repository.Courses
         }
         public List<Course> getAllCourses()
         {
-            return  dBContext.Courses.Where(c=>!c.IsDeleted).Include(i=>i.Instructor).ToList();
+            return  dBContext.Courses.Where(c=>!c.IsDeleted)
+                .Include(i=>i.Instructor)
+                .Include(c => c.Category)
+                .ToList();
         }
 
         public Course getCourseByID(int ID)

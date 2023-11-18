@@ -2,10 +2,19 @@
 @{
     ViewData["Title"] = "New";
 }
+<div class="page-info-section set-bg" data-setbg="../../SiteImages/page-bg/1.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+            <a asp-controller="Lecture" asp-action="Index">Lecture</a>
+            <span>New Lecture</span>
+        </div>
+    </div>
+</div>
 
 <h1>New</h1>
 <form method="post" asp-action="SaveNew">
-
+    <div asp-validation-summary="All" class="text-danger">
+    </div>
     <div>
         <label asp-for="Name">
             Lecture Name
@@ -31,7 +40,10 @@
         <input class="form-control" asp-for="Duration" />
         <span asp-validation-for="Duration" class="text-danger"></span>
 
-    </div>
+    </div>   
+        <input class="form-control" hidden asp-for="ins_id" value="@ViewBag.id"/>
+        <input class="form-control" hidden asp-for="crs_id" value="@ViewBag.crs_id" />
+
 
     @*  <div>
     <label asp-for="ins_id">Instructor</label>
@@ -49,4 +61,11 @@
 
 </form>
 <a asp-action="Index" asp-controller="Lecture" class="btn btn-danger">Back To List</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
 
